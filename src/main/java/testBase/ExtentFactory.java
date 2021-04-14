@@ -22,13 +22,13 @@ public class ExtentFactory {
 	
 	
 	//factory design pattern --> define separate factory methods for creating objects and create objects by calling that methods
-	ThreadLocal<ExtentTest> extent = new ThreadLocal<ExtentTest>();
+	private static ThreadLocal<ExtentTest> extent = new ThreadLocal<ExtentTest>();
 	
 	public ExtentTest getExtent() {
 		return extent.get();
 	}
 	
-	public void setExtent(ExtentTest extentTestObject) {
+	public static void setExtent(ExtentTest extentTestObject) {
 		extent.set(extentTestObject);
 	}
 	

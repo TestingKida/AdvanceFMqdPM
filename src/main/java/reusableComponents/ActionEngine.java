@@ -21,6 +21,10 @@ public class ActionEngine {
 	//Customized sendkeys method-> To log sendkeys message for every occ.
 	public void sendKeys_custom(WebElement element, String fieldName, String valueToBeSent) {
 		try {
+			//JavaScriptHelperUtils.sendkeysUsingJavaScript(element, valueToBeSent);
+			//JavascriptExecutor jse = (JavascriptExecutor)DriverFactory.getInstance().getDriver();
+			//jse.executeScript("document.getElementById('"+element+"').scrollIntoView();");
+			//jse.executeScript("window.scroll()");
 			element.sendKeys(valueToBeSent);
 			//log success message in exgent report
 			ExtentFactory.getInstance().getExtent().log(Status.PASS, fieldName+"==> Ented value as: "+valueToBeSent);
@@ -60,7 +64,8 @@ public class ActionEngine {
 	public void moveToElement_custom(WebElement element,String fieldName){
 		try{
 			JavascriptExecutor executor = (JavascriptExecutor) DriverFactory.getInstance().getDriver();
-			executor.executeScript("arguments[0].scrollIntoView(true);", element);
+			executor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+			//executor.executeScript("arguments[0].scrollIntoView(true);", element);
 			Actions actions = new Actions(DriverFactory.getInstance().getDriver());		
 			actions.moveToElement(element).build().perform();
 			ExtentFactory.getInstance().getExtent().log(Status.PASS, fieldName+"==> Mouse hovered Successfully! ");

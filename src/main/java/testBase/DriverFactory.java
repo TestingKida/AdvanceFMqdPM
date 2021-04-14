@@ -23,9 +23,10 @@ public class DriverFactory {
 	
 	
 	//factory design pattern --> define separate factory methods for creating objects and create objects by calling that methods
-	ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
-	
-	public WebDriver getDriver() {
+	 ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();//private static
+	// made above Driver object private static for checking Taskj search issue on 12 April 21
+	//also added synchronizedk keyword
+	public  WebDriver  getDriver() {
 		return driver.get();
 	}
 	
