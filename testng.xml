@@ -5,7 +5,7 @@
 		<listener class-name="reusableComponents.ListenersImplementation" />
 		<listener class-name="reusableComponents.TestRetryAnalyzerListener" />
 	</listeners>
-	<!-- Test<test name="LoginTests">
+	<!-- <test name="LoginTests">
 		<classes>
 			<class name="Tests.UserLoginTests" />
 		</classes>

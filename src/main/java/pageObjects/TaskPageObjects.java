@@ -52,7 +52,7 @@ public class TaskPageObjects extends TestBase {
 
 	}
 
-	private String getTaskTableCellValueByColumnName(String columnName) {
+	private synchronized String getTaskTableCellValueByColumnName(String columnName) {
 		
 		String valueXpath = "//table[starts-with(@id, 'itmes_listing')]/tbody/tr/td[count(//table[starts-with(@id, 'itmes_listing')]/thead/tr/th/div[text()='"+columnName+"']/parent::th/preceding-sibling::th)+1]";
 		String value = DriverFactory.getInstance().getDriver().findElement(By.xpath(valueXpath)).getText();

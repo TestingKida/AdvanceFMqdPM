@@ -22,9 +22,9 @@ import testBase.TestBase;
 
 public class TestCase extends TestBase{
 	private LoginPageObjects loginPage = new LoginPageObjects();
-	private HomePageObjects homePage = new HomePageObjects();
-	private TaskPageObjects taskPage = new TaskPageObjects();	
-	private ExcelOperations excel = new ExcelOperations("TaskCreationData");
+	private  HomePageObjects homePage = new HomePageObjects();
+	private  TaskPageObjects taskPage = new TaskPageObjects();	
+	private   ExcelOperations excel = new ExcelOperations("TaskCreationData");
 
 	@Test(dataProvider = "taskCreationData")
 	public void  TaskCreationTest(Object obj1) throws Throwable {
@@ -48,7 +48,7 @@ public class TestCase extends TestBase{
 
 	}
 
-	@Test(dataProvider = "taskCreationData1")
+	@Test(dataProvider = "taskCreationData")
 	public void  TaskCreationTest_1(Object obj1) throws Throwable {
 		@SuppressWarnings("unchecked")
 		HashMap<String, String> testData = (HashMap<String, String>) obj1;
@@ -68,7 +68,7 @@ public class TestCase extends TestBase{
 		taskPage.VerifyTaskInDB();
 
 	}
-	@Test(dataProvider = "taskCreationData2")
+	@Test(dataProvider = "taskCreationData")
 	public void  TaskCreationTest_2(Object obj1) throws Throwable {
 		@SuppressWarnings("unchecked")
 		HashMap<String, String> testData = (HashMap<String, String>) obj1;
@@ -102,7 +102,7 @@ public class TestCase extends TestBase{
 		return obj;
 
 	}
-	@DataProvider (name = "taskCreationData1")
+	/*@DataProvider (name = "taskCreationData1")
 	public Object[][] testDataSupplier_1() throws Exception {
 		Object[][] obj1 = new Object[excel.getRowCount()][1];
 		for (int i = 1; i <= excel.getRowCount(); i++) {
@@ -121,5 +121,5 @@ public class TestCase extends TestBase{
 		}
 		return obj2;
 
-	}
+	}*/
 }
