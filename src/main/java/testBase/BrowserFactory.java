@@ -8,6 +8,7 @@ package testBase;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,10 +33,15 @@ public class BrowserFactory {
 		if(browser.equalsIgnoreCase("Chrome")) {
 
 			WebDriverManager.chromedriver().setup();
-			System.setProperty("webdriver.chrome.silentOutput", "true");
-
-
 			ChromeOptions options = new ChromeOptions();
+			options.addArguments("enable-automation");
+			options.addArguments("--headless");
+			options.addArguments("--window-size=1920,1080");
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-extensions");
+			options.addArguments("--dns-prefetch-disable");
+			options.addArguments("--disable-gpu");
+			options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 			options.addArguments("--incognito");
 			driver = new ChromeDriver(options);
 
