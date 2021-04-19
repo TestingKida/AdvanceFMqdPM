@@ -5,14 +5,14 @@
 		<listener class-name="reusableComponents.ListenersImplementation" />
 		<listener class-name="reusableComponents.TestRetryAnalyzerListener" />
 	</listeners>
-	 <test name="LoginTests">
+	<!-- <test name="LoginTests">
 		<classes>
 			<class name="Tests.UserLoginTests" />
 		</classes>
-	</test>
-	<!--<test name="DataDriven Tests" >
+	</test>-->
+	<test name="DataDriven Tests" >
 		<classes>
 			<class name="Tests.TestCase" />
 		</classes>
-	</test> -->
+	</test>
 </suite> <!-- Suite -->
