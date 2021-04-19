@@ -27,7 +27,6 @@ public class DriverFactory {
 	// made above Driver object private static for checking Taskj search issue on 12 April 21
 	//also added synchronizedk keyword
 	public  WebDriver  getDriver() {
-		System.out.println("Current thread: >>> " + Thread.currentThread().getId());
 		return driver.get();
 		
 	}
